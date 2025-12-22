@@ -1,0 +1,39 @@
+{define menu items}
+<sl-menu>
+  {foreach $items as $item}
+    {if $item->divider}
+      <sl-divider></sl-divider>
+    {/if}
+
+    {if isset($item->children)}
+      <sl-menu-item n:attr="disabled => $item->disabled">
+        {if $item->prefixIcon}
+          <sl-icon slot="prefix" name="{$item->prefixIcon}"></sl-icon>
+        {/if}
+        {$item->label}
+        {if $item->suffixIcon}
+          <sl-icon slot="suffix" name="{$item->suffixIcon}"></sl-icon>
+        {/if}
+        <sl-menu slot="submenu">
+          {include menu items, items => $item->children}
+        </sl-menu>
+      </sl-menu-item>
+    {else}
+      <sl-menu-item
+        n:attr="value => $item->value, disabled => $item->disabled, href => $item->href"
+        n:attr="onclick => $item->onClick ? 'event.preventDefault(); ' . $item->onClick : null"
+      >
+        {if $item->prefixIcon}
+          <sl-icon slot="prefix" name="{$item->prefixIcon}"></sl-icon>
+        {/if}
+        {$item->label}
+        {if $item->suffixIcon}
+          <sl-icon slot="suffix" name="{$item->suffixIcon}"></sl-icon>
+        {/if}
+      </sl-menu-item>
+    {/if}
+  {/foreach}
+</sl-menu>
+{/define}
+
+{include menu items, items => $menuItems}

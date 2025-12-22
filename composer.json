@@ -1,0 +1,46 @@
+{
+  "require": {
+    "php": "8.2.* || 8.3.*",
+    "iconify/json": "*",
+    "ext-json": "*",
+    "ext-pdo_sqlite": "*",
+    "slim/slim": "^4",
+    "php-di/php-di": "^7.0",
+    "nyholm/psr7": "^1.8",
+    "nyholm/psr7-server": "^1.1",
+    "traderinteractive/util-arrays": "^4.0",
+    "laminas/laminas-diactoros": "^2.26",
+    "tracy/tracy": "^2.10",
+    "monolog/monolog": "^3.7",
+    "latte/latte": "^3.0",
+    "odan/session": "^6.2",
+    "ramsey/uuid": "^4.7",
+    "guzzlehttp/guzzle": "^7.9",
+    "slim/csrf": "^1.5",
+    "slim/flash": "^0.4.0",
+    "vlucas/phpdotenv": "^5.6",
+    "league/commonmark": "^2.8"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "config": {
+    "process-timeout": 0
+  },
+  "scripts": {
+    "start": "php -S localhost:8080 -t public",
+    "clean": "npm run clean && php bin/clean.php",
+    "setup": "php bin/setup.php",
+    "test": "phpunit"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^11.4"
+  }
+}

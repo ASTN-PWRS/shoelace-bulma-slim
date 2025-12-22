@@ -1,0 +1,25 @@
+{
+  "name": "shoelace-bulma-slim",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "php -S localhost:8080 -t public",
+    "build:shoe-lace": "vite build",
+    "build:bulma": "sass --load-path=./node_modules ./scss/custom-bulma.scss ./public/css/output-bulma.css",
+    "build": "npm run build:shoe-lace && npm run build:bulma",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "bulma-darkify": "^1.0.2",
+    "cross-env": "^10.1.0",
+    "sass": "^1.94.2",
+    "vite": "^7.3.0",
+    "vite-plugin-static-copy": "^3.1.4"
+  },
+  "dependencies": {
+    "@shoelace-style/shoelace": "^2.20.1",
+    "bulma": "^1.0.4",
+    "katex": "^0.16.27"
+  }
+}

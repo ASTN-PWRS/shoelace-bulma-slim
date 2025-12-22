@@ -1,0 +1,33 @@
+{layout 'layouts/base.latte'}
+
+{block title}ホーム{/block}
+
+{block navbar}
+  {include '../templates/nav.latte', navItems => $navItems, navButtons => $navButtons}
+{/block}
+
+{block leftDrawer}
+  <sl-drawer label="ナビゲーション" placement="start" open>
+    <sl-menu>
+      <sl-menu-item value="home">ホーム</sl-menu-item>
+      <sl-menu-item value="docs">ドキュメント</sl-menu-item>
+    </sl-menu>
+  </sl-drawer>
+{/block}
+
+{block rightDrawer}
+  <sl-drawer label="通知" placement="end">
+    <p>新しいお知らせはありません。</p>
+  </sl-drawer>
+{/block}
+
+{block content}
+  <h1 class="title">ようこそ！</h1>
+  <p>これはホームページです。</p>
+{/block}
+
+{block footer}
+  <footer class="footer has-text-centered">
+    <p>🌱 Powered by Shoelace + Bulma + Latte</p>
+  </footer>
+{/block}

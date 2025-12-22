@@ -1,0 +1,79 @@
+{define dropdown menu}
+<sl-dropdown class="navbar-item">
+  <sl-button slot="trigger" caret>{$dropdown->label}</sl-button>
+  <sl-menu>
+    {foreach $dropdown->items as $item}
+      <sl-menu-item
+        value="{$item->value}"
+        n:attr="href => $item->href"
+        n:attr="disabled => $item->disabled"
+        n:attr="selected => $item->selected"
+        n:attr="onclick => $item->onClick ? 'event.preventDefault(); ' . $item->onClick : null"
+      >
+        {if $item->prefixIcon}
+          <sl-icon slot="prefix" name="{$item->prefixIcon}"></sl-icon>
+        {/if}
+        {$item->label}
+        {if $item->suffixIcon}
+          <sl-icon slot="suffix" name="{$item->suffixIcon}"></sl-icon>
+        {/if}
+      </sl-menu-item>
+    {/foreach}
+  </sl-menu>
+</sl-dropdown>
+{/define}
+
+{define logo}
+<svg width="112" height="28" viewBox="0 0 640 160" xmlns="http://www.w3.org/2000/svg">
+  <!-- SVGパスをここに貼り付けてね -->
+</svg>
+{/define}
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="https://bulma.io">
+      {include logo}
+    </a>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      {foreach $navItems as $item}
+        {if $item->children}
+          {include dropdown menu, dropdown => $item}
+        {else}
+          <a class="navbar-item" n:class="$item->active ? 'is-active'" href="{$item->href}">
+            {$item->label}
+          </a>
+        {/if}
+      {/foreach}
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          {foreach $navButtons as $btn}
+            {if $btn->isButton}
+              <sl-button
+                variant="{$btn->buttonVariant}"
+                n:attr="href => $btn->href"
+              >
+                {if $btn->buttonVariant === 'primary'}
+                  <strong>{$btn->label}</strong>
+                {else}
+                  {$btn->label}
+                {/if}
+              </sl-button>
+            {/if}
+          {/foreach}
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

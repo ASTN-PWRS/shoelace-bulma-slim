@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>{block title}My App{/block}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" rel="stylesheet">
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.15.0/dist/shoelace.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.15.0/dist/themes/dark.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.15.0/dist/themes/light.css">
+  {block head}{/block}
+</head>
+<body>
+
+  {block navbar}{/block}
+
+  {block leftDrawer}
+    <sl-drawer label="メニュー" placement="start" class="drawer-left" contained>
+      <div class="p-3">
+        <p>左側のメニュー</p>
+      </div>
+    </sl-drawer>
+  {/block}
+
+  {block rightDrawer}
+    <sl-drawer label="通知" placement="end" class="drawer-right" contained>
+      <div class="p-3">
+        <p>右側の通知パネル</p>
+      </div>
+    </sl-drawer>
+  {/block}
+
+   <section class="hero is-fullheight-with-navbar">
+      {block content}
+        <div class="hero-body">
+          <div class="container">
+            <h1 class="title">中央のコンテンツ</h1>
+          </div>
+        </div>
+      {/block}
+    </div>
+  </section>
+
+  {block footer}
+    <footer class="footer has-text-centered">
+      <p>&copy; {=date('Y')} My App</p>
+    </footer>
+  {/block}
+
+  {block scripts}{/block}
+</body>
+</html>
