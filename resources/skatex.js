@@ -1,7 +1,14 @@
+// inline
+//<s-katex>c = \sqrt{a^2 + b^2}</s-katex>
+//block
+//<s-katex display-mode>
+//   \int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}
+// </s-katex>
+
 class SKatex extends HTMLElement {
   constructor() {
     super();
-    this.attachShadow({ mode: 'open' });
+    this.attachShadow({ mode: "open" });
     this._observer = new MutationObserver(() => this._renderMath());
   }
 
@@ -9,7 +16,7 @@ class SKatex extends HTMLElement {
     this._observer.observe(this, {
       childList: true,
       characterData: true,
-      subtree: true
+      subtree: true,
     });
     this._renderMath();
   }
@@ -19,19 +26,19 @@ class SKatex extends HTMLElement {
   }
 
   _renderMath() {
-    const raw = this.textContent?.trim() || '';
+    const raw = this.textContent?.trim() || "";
     const katex = window.katex;
     if (!katex || !this.shadowRoot) {
-      console.warn('KaTeX is not loaded yet.');
+      console.warn("KaTeX is not loaded yet.");
       return;
     }
 
     try {
-      this.shadowRoot.innerHTML = '';
-      const span = document.createElement('span');
+      this.shadowRoot.innerHTML = "";
+      const span = document.createElement("span");
       katex.render(raw, span, {
         throwOnError: false,
-        displayMode: this.hasAttribute('display-mode')
+        displayMode: this.hasAttribute("display-mode"),
       });
       this.shadowRoot.appendChild(span);
     } catch (e) {
@@ -40,4 +47,4 @@ class SKatex extends HTMLElement {
   }
 }
 
-customElements.define('s-katex', SKatex);
+customElements.define("s-katex", SKatex);

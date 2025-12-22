@@ -16,6 +16,8 @@ $container = (new ContainerBuilder())
     ->build();
 
 $app = $container->get(App::class);
+
+$app->setBasePath($settings['base_path']);
 try { 
   $app->run();
 } catch (Exception $e) {

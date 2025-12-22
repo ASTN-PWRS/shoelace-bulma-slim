@@ -5,3 +5,13 @@ node_modules
 composer.lock
 vendor
 .env
+
+#
+/vars/tmp/*
+/vars/logs/*
+/vars/cache/*
+
+#
+!/vars/tmp/
+!/vars/logs/
+!/vars/cache/
