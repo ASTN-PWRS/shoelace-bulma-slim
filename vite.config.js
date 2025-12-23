@@ -18,6 +18,10 @@ export default defineConfig({
     viteStaticCopy({
       targets: [
         {
+          src: "node_modules/@shoelace-style/shoelace/dist/assets",
+          dest: "",
+        },
+        {
           src: "node_modules/katex/dist/*.{js,css}",
           dest: "../katex",
         },
@@ -28,6 +32,10 @@ export default defineConfig({
         {
           src: "node_modules/katex/dist/contrib",
           dest: "../katex",
+        },
+        {
+          src: "node_modules/mermaid/dist/mermaid.min.js",
+          dest: "../mermaid",
         },
       ],
     }),
