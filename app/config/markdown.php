@@ -1,7 +1,10 @@
 <?php
-use App\Renderer\MarkdownRenderer;
-use App\Controller\MarkdownController;
-use App\Extension\AdmonitionExtension;
+use App\Markdown\MarkdownRenderer;
+use App\Markdown\Controller\MarkdownController;
+use App\Markdown\Extension\AdmonitionExtension;
+use App\Markdown\Extension\MermaidExtension;
+
+
 use League\CommonMark\Extension\ExtensionInterface;
 use function DI\autowire;
 use function DI\get;
@@ -10,6 +13,7 @@ return [
   // 拡張機能をまとめた配列を定義
   'markdown.extensions' => [
     get(AdmonitionExtension::class),
+    get(MermaidExtension::class),
   ],
   // MarkdownRenderer に拡張を注入
   MarkdownRenderer::class => autowire()
@@ -18,4 +22,5 @@ return [
   MarkdownController::class => autowire(),
   // 拡張クラスも自動解決
   AdmonitionExtension::class => autowire(), 
+  MermaidExtension::class => autowire()
 ];

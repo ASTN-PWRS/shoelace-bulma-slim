@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Extension;
+namespace App\Markdown\Extension;
 
 use League\CommonMark\Renderer\NodeRendererInterface;
 use League\CommonMark\Renderer\ChildNodeRendererInterface;
 use League\CommonMark\Node\Node;
-use App\Extension\Node\Admonition;
+use App\Markdown\Extension\Node\Admonition;
 
 class AdmonitionRenderer implements NodeRendererInterface
 {

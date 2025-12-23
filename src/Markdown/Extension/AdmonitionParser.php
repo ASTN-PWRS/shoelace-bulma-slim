@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Extension;
+namespace App\Markdown\Extension;
 
 use League\CommonMark\Parser\Block\BlockStart;
 use League\CommonMark\Parser\Block\BlockStartParserInterface;
 use League\CommonMark\Parser\Cursor;
-use App\Extension\Node\Admonition;
+use App\Markdown\Extension\Node\Admonition;
 
 class AdmonitionParser implements BlockStartParserInterface
 {

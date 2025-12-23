@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Renderer;
+namespace App\Markdown;
 
 use League\CommonMark\Environment\Environment;
 use League\CommonMark\MarkdownConverter;

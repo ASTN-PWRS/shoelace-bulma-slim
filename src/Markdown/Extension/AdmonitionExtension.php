@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Extension;
+namespace App\Markdown\Extension;
 
 use League\CommonMark\Extension\ExtensionInterface;
 use League\CommonMark\Environment\EnvironmentBuilderInterface;

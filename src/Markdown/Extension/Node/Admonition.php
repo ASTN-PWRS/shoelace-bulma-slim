@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Extension\Node;
+namespace App\Markdown\Extension\Node;
 
 use League\CommonMark\Node\Block\AbstractBlock;
 
