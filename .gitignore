@@ -10,6 +10,11 @@ vendor
 /vars/tmp/*
 /vars/logs/*
 /vars/cache/*
+# public フォルダ内のすべてを無視
+/public/*
+# ただし public/index.php は除外（追跡対象にする）
+!/public/index.php
+!/public/web.config
 
 #
 !/vars/tmp/
