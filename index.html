@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./public/css/output-bulma.min.css" />
+    <link rel="stylesheet" href="./public/shoelace/shoelace.css" />
+    <link rel="stylesheet" href="./public/katex/katex.min.css" />
+    <script src="./public/markdown-it/markdown-it.min.js"></script>
+    <script src="./public/markdown-it/markdown-it-container.min.js"></script>
+    <script src="./public/mermaid/mermaid.min.js"></script>
+    <script src="./public/katex/katex.min.js"></script>
+    <script type="module" src="./public/shoelace/shoelace.js"></script>
+    <script>
+      if (!window.mermaid) {
+        console.error(
+          "Mermaid is not loaded. Make sure mermaid.min.js is included before s-markdown.js"
+        );
+      }
+    </script>
+  </head>
+  <body>
+    test<br />
+
+    <!-- <s-katex
+      >f\relax{x} = \int_{-\infty}^\infty f\hat\xi\,e^{2 \pi i \xi x}
+      \,d\xi</s-katex
+    > -->
+    <s-markdown src="./public/example.md"></s-markdown>
+    <s-markdown src="./public/example2.md"></s-markdown>
+  </body>
+</html>

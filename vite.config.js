@@ -37,6 +37,14 @@ export default defineConfig({
           src: "node_modules/mermaid/dist/mermaid.min.js",
           dest: "../mermaid",
         },
+        {
+          src: "node_modules/markdown-it/dist/markdown-it.min.js",
+          dest: "../markdown-it",
+        },
+        {
+          src: "node_modules/markdown-it-container/dist/markdown-it-container.min.js",
+          dest: "../markdown-it",
+        },
       ],
     }),
   ],

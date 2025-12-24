@@ -8,7 +8,7 @@
     "build:shoe-lace": "vite build",
     "build:bulma": "sass --load-path=./node_modules ./scss/custom-bulma.scss ./public/css/output-bulma.css",
     "build": "npm run build:shoe-lace && npm run build:bulma",
-    "preview": "vite preview"
+    "preview": "vite"
   },
   "devDependencies": {
     "bulma-darkify": "^1.0.2",
@@ -21,6 +21,8 @@
     "@shoelace-style/shoelace": "^2.20.1",
     "bulma": "^1.0.4",
     "katex": "^0.16.27",
+    "markdown-it": "^14.1.0",
+    "markdown-it-container": "^4.0.0",
     "mermaid": "^11.12.2"
   }
 }
