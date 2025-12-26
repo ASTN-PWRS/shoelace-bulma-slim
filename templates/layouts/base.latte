@@ -47,7 +47,9 @@
       <p>&copy; {=date('Y')} My App</p>
     </footer>
   {/block}
-
+  {foreach $getAssets('js') as $js}
+    <script src="{$basepath}{$js}"></script>
+  {/foreach}
   {block scripts}{/block}
 </body>
 </html>

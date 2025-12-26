@@ -1,4 +1,9 @@
 <?php
+namespace App\Renderer;
+
+use Slim\App;
+use Latte\Engine;
+use Psr\Container\ContainerInterface;
 
 return [
 	Engine::class => function (ContainerInterface $container) {
